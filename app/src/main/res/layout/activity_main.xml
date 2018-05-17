@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+    android:id="@+id/translatabletext"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:text="Hi, Translate Me!"
+    android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/translateedittext"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/translatabletext"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+    <Button
+        android:id="@+id/translatebutton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/translateedittext"
+        android:text="Translate"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <Spinner
+        android:id="@+id/fromSpinner"
+        android:layout_width="110dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:entries="@array/language_arrays"
+        android:prompt="@string/language_prompt"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp" />
+
+    <Spinner
+        android:id="@+id/toSpinner"
+        android:layout_width="138dp"
+        android:layout_height="36dp"
+        android:layout_alignTop="@+id/fromSpinner"
+        android:entries="@array/language_arrays"
+        android:prompt="@string/language_prompt"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
