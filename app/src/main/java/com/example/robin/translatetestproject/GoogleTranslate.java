@@ -23,14 +23,16 @@ public class GoogleTranslate {
         key = apiKey;
     }
 
+    public GoogleTranslate() {
 
-    String translte(String translatetotagalog, String selectedFromLang, String selectedToLang) {
+    }
+    String translte(String text, String from, String to) {
         StringBuilder result = new StringBuilder();
         try {
-            String encodedText = URLEncoder.encode(translatetotagalog, "UTF-8");
+            String encodedText = URLEncoder.encode(text, "UTF-8");
             //Toast encodeToast = Toast.makeText(getApplicationContext(),  encodedText, Toast.LENGTH_SHORT);
             //encodeToast.show();
-            String urlStr = "https://translation.googleapis.com/language/translate/v2?key=" + key + "&q=" + encodedText + "&target=" + selectedToLang + "&source=" + selectedFromLang;
+            String urlStr = "https://translation.googleapis.com/language/translate/v2?key=" + key + "&q=" + encodedText + "&target=" + to + "&source=" + from;
             URL url = new URL(urlStr);
             HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
             InputStream stream;
